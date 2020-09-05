@@ -1,7 +1,7 @@
 import React from 'react';
 import './transactions.css';
 // eslint-disable-next-line
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 function Transactions({ items }) {
   return (
@@ -30,11 +30,11 @@ function Transactions({ items }) {
   );
 }
 
-// Transactions.PropTypes = {
-//   id: PropTypes.string.isRequired,
-//   type: PropTypes.string.isRequired,
-//   amount: PropTypes.string.isRequired,
-//   currency: PropTypes.string.isRequired,
-// };
+Transactions.propTypes = {
+  id: propTypes.string.isRequired,
+  type: propTypes.string.isRequired,
+  amount: propTypes.string.isRequired,
+  currency: propTypes.string.isRequired,
+};
 
 export default Transactions;

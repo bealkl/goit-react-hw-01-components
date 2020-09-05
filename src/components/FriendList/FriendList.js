@@ -1,7 +1,7 @@
 import React from 'react';
 import './friends.css';
 // eslint-disable-next-line
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 function FriendList({ friends }) {
   return (
@@ -22,12 +22,12 @@ function FriendList({ friends }) {
   );
 }
 
-// FriendList.PropTypes = {
+FriendList.propTypes = {
 
-//     id: PropTypes.number.isRequired,
-//     avatar: PropTypes.string,
-//     name: PropTypes.string.isRequired,
-// isOnline: PropTypes.bool.isRequired,
-// };
+    id: propTypes.number.isRequired,
+    avatar: propTypes.string,
+    name: propTypes.string.isRequired,
+isOnline: propTypes.bool.isRequired,
+};
 
 export default FriendList;

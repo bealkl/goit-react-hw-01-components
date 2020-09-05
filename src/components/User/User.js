@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles.module.css';
 // eslint-disable-next-line
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 function User({ avatar, location, name, tag, stats: { followers, views, likes } }) {
   return (
@@ -32,16 +32,16 @@ function User({ avatar, location, name, tag, stats: { followers, views, likes } 
   );
 }
 
-// User.PropTypes = {
-//   name: PropTypes.string.isRequired,
-//   tag: PropTypes.string.isRequired,
-//   location: PropTypes.string.isRequired,
-//   avatar: PropTypes.string.isRequired,
-//   stats: PropTypes.shape({
-//     followers: PropTypes.number.isRequired,
-//     views: PropTypes.number.isRequired,
-//     likes: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
+User.propTypes = {
+  name: propTypes.string.isRequired,
+  tag: propTypes.string.isRequired,
+  location: propTypes.string.isRequired,
+  avatar: propTypes.string.isRequired,
+  stats: propTypes.shape({
+    followers: propTypes.number.isRequired,
+    views: propTypes.number.isRequired,
+    likes: propTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default User;
