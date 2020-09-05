@@ -1,0 +1,57 @@
+
+.friend-list {
+  list-style-type: none;
+  display: flex;
+  text-align: center;
+  width: 505px;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  }
+
+.itemFriends {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*justify-content: space-around;*/
+  margin-bottom: 5px;
+  border: 1px solid grey;
+  background-color: white;
+  /*width: 200px;*/
+  /*height: 120px;*/
+  }
+
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border: 1px solid white;
+  border-radius: 10px;
+  }
+
+.statusIsOnline {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: green;
+  margin: 0 50px;
+  }
+
+.statusIsOffline {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: red;
+  margin: 0 50px;
+  }
+
+.name{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: grey;
+  font-size: calc(10px + 1vmin);
+  margin-left: 30px;
+  }
