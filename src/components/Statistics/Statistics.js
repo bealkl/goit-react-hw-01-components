@@ -24,12 +24,12 @@ function Statistics() {
   );
 }
 
-// Statistics.PropTypes = {
-//   data: PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     label: PropTypes.string.isRequired,
-//     percentage: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
+Statistics.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Statistics;
