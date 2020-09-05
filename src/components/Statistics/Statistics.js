@@ -1,21 +1,22 @@
 import React from 'react';
-import statiscticalData from './statistical-data.json';
-import './statistics.css';
-// eslint-disable-next-line
 import PropTypes from 'prop-types';
 
-function Statistics() {
+import s from './statistics.module.css';
+
+const randomBGColor = () => {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+};
+
+function Statistics({ statiscticalData }) {
   return (
-    <section className="statistics">
-      <h2 className="title">Upload stats</h2>
-      <ul className="stat-list">
-        {statiscticalData.map(data => {
-          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-          const divStyle = { backgroundColor: '#' + randomColor };
+    <section className={s.statistics}>
+      <h2 className={s.title}>Upload stats</h2>
+      <ul className={s.statList}>
+        {statiscticalData.map(({ id, label, percentage }) => {
           return (
-            <li className="item" style={divStyle} key={data.id}>
-              <span className="label">{data.label}</span>
-              <span className="percentage">{data.percentage}</span>
+            <li className={s.item} style={{ backgroundColor: randomBGColor() }} key={id}>
+              <span className={s.label}>{label}</span>
+              <span className={s.percentage}>{percentage}</span>
             </li>
           );
         })}
@@ -25,11 +26,9 @@ function Statistics() {
 }
 
 Statistics.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
 
 export default Statistics;

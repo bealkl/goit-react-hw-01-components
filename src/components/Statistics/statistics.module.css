@@ -6,7 +6,7 @@
   margin: auto;
   background-color: white;
   margin-top: 10px;
-  }
+}
 
 .title {
   display: inline-block;
@@ -18,14 +18,13 @@
   height: 90px;
   align-content: center;
   padding-top: 30px;
-  }
+}
 
-.stat-list {
+.statList {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  }
-
+}
 
 .item {
   display: flex;
@@ -36,14 +35,14 @@
   text-align: center;
   color: grey;
   font-weight: 600;
-  }
-.label{
+}
+.label {
   height: 20px;
   font-weight: 600;
-  }
+}
 
-.percentage{
+.percentage {
   height: 30px;
   font-weight: 600;
   font-size: calc(10px + 1vmin);
-  }
+}

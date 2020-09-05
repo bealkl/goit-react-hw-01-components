@@ -1,31 +1,32 @@
 import React from 'react';
-import styles from '../../styles.module.css';
-// eslint-disable-next-line
 import PropTypes from 'prop-types';
 
-function User({ avatar, location, name, tag, stats: { followers, views, likes } }) {
+import s from '../../styles.module.css';
+
+function User({ avatar, location, name, tag, stats }) {
+  const { followers, views, likes } = stats;
   return (
-    <div className={styles.profile}>
-      <div className={styles.description}>
-        <img src={avatar} alt="userAvatar" className={styles.avatar} />
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img src={avatar} alt="userAvatar" className={s.avatar} />
         <div>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.tag}>@{tag}</p>
-          <p className={styles.location}>{location}</p>
+          <p className={s.name}>{name}</p>
+          <p className={s.tag}>@{tag}</p>
+          <p className={s.location}>{location}</p>
         </div>
       </div>
-      <ul className={styles.stats}>
-        <li className={styles.statsItem}>
-          <p className={styles.label}>{'followers'}</p>
-          <p className={styles.quantity}>{followers}</p>
+      <ul className={s.stats}>
+        <li className={s.statsItem}>
+          <p className={s.label}>{'followers'}</p>
+          <p className={s.quantity}>{followers}</p>
         </li>
-        <li className={styles.statsItem}>
-          <p className={styles.label}>{'views'}</p>
-          <p className={styles.quantity}>{views}</p>
+        <li className={s.statsItem}>
+          <p className={s.label}>{'views'}</p>
+          <p className={s.quantity}>{views}</p>
         </li>
-        <li className={styles.statsItem}>
-          <p className={styles.label}>{'likes'}</p>
-          <p className={styles.quantity}>{likes}</p>
+        <li className={s.statsItem}>
+          <p className={s.label}>{'likes'}</p>
+          <p className={s.quantity}>{likes}</p>
         </li>
       </ul>
     </div>

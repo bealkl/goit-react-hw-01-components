@@ -1,11 +1,11 @@
 import React from 'react';
-import './transactions.css';
-// eslint-disable-next-line
 import PropTypes from 'prop-types';
+
+import s from './transactions.module.css';
 
 function Transactions({ items }) {
   return (
-    <table className="transaction-history">
+    <table className={s.transactionHistory}>
       <thead>
         <tr>
           <th>Type</th>
@@ -15,8 +15,7 @@ function Transactions({ items }) {
       </thead>
 
       <tbody>
-        {items.map(data => {
-          const { id, type, amount, currency } = data;
+        {items.map(({ id, type, amount, currency }) => {
           return (
             <tr key={id}>
               <td>{type}</td>

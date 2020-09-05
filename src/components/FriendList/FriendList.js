@@ -1,33 +1,30 @@
 import React from 'react';
-import './friends.css';
-// eslint-disable-next-line
 import PropTypes from 'prop-types';
+
+import s from './friends.module.css';
 
 function FriendList({ friends }) {
   return (
-    <>
-      <ul className="friend-list">
-        {friends.map(data => {
-          const { avatar, name, isOnline, id } = data;
-          return (
-            <li className="itemFriends" key={id}>
-              <span className={isOnline ? 'statusIsOnline' : 'statusIsOffline'}></span>
-              <img className="avatar" src={avatar} alt="" width="48" />
-              <p className="name">{name}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <ul className={s.friendList}>
+      {friends.map(({ avatar, name, isOnline, id }) => {
+        const statusClass = isOnline ? s.statusIsOnline : s.statusIsOffline;
+        return (
+          <li className={s.itemFriends} key={id}>
+            <span className={statusClass}></span>
+            <img className={s.avatar} src={avatar} alt="" width="48" />
+            <p className={s.name}>{name}</p>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
 FriendList.propTypes = {
-
-    id: PropTypes.number.isRequired,
-    avatar: PropTypes.string,
-    name: PropTypes.string.isRequired,
-isOnline: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 export default FriendList;
